@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fit World - Gym &amp; Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600;700&family=Jost:wght@400;500;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="logo">Fit <span>World</span></a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#gym-space">Programs</a>
+        <a href="#coaches">Trainers</a>
+        <a href="#membership">Pricing</a>
+        <a href="#">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="btn btn--line nav-cta">Join Now</button>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <img src="images/header-img.jpg" alt="Discipline Builds Strength" class="hero__banner" />
+    <a href="#" class="btn btn--line hero__cta">Explore Programs <span>&rarr;</span></a>
+  </section>
+
+  <!-- ===== Section 1: More Than a Gym ===== -->
+  <section class="gym-space" id="gym-space">
+    <button class="fab" aria-label="Like">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 22V11M2 13V20C2 21.1 2.9 22 4 22H17.4C18.4 22 19.3 21.3 19.5 20.3L21.4 11.3C21.7 9.9 20.6 8.5 19.1 8.5H14V4.5C14 3.1 12.9 2 11.5 2C11.1 2 10.8 2.2 10.6 2.6L7 11" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="gym-space__bgtext-track" aria-hidden="true">
+      <span>WHERE COMMITMENT MEETS RESULTS</span>
+      <span>WHERE COMMITMENT MEETS RESULTS</span>
+    </div>
+
+    <div class="container">
+      <div class="gym-space__intro reveal">
+        <span class="section-label">More Than a Gym</span>
+        <h2 class="gym-heading">
+          <span class="dim">Our space combines</span>
+          <span class="bright">professional equipment,</span><br />
+          <span class="bright">expert coaches,</span> <span class="dim">and a motivating atmosphere</span><br />
+          <span class="dim">to help you</span> <span class="bright">train smarter,</span><br />
+          <span class="bright">move better,</span> <span class="dim">and</span> <span class="bright">grow stronger</span><span class="dim">&mdash;every day.</span>
+        </h2>
+      </div>
+
+      <div class="feature-cards">
+        <article class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.5 8.5v7M17.5 8.5v7M3 10.5v3M21 10.5v3M6.5 12h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="4.5" y="9" width="4" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="15.5" y="9" width="4" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Functional Training</h3>
+          <p>Build real-world strength and mobility with equipment-driven functional workouts.</p>
+        </article>
+
+        <article class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12h3.5l2-4 3 8 2-5 1.5 3H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Cardio Area</h3>
+          <p>Push your endurance with our fully-equipped cardio zone and open floor space.</p>
+        </article>
+
+        <article class="feature-card reveal">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="4.5" r="1.8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 8v5m0 0l-4 6m4-6l4 6m-6-9l-4 2m6-2l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Fitness &amp; Pilates</h3>
+          <p>Improve flexibility, core strength, and balance in our dedicated studio space.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 1b: Performance Spotlight ===== -->
+  <section class="performance-spotlight" id="performance-spotlight">
+    <div class="container performance-spotlight__inner">
+      <div class="performance-spotlight__heading reveal">
+        <span class="section-label">Designed for Performance</span>
+        <h2 class="performance-spotlight__title">More Than a Gym &ndash; A Space<br />Built for Progress</h2>
+      </div>
+
+      <div class="performance-spotlight__columns">
+        <div class="performance-panel reveal-left">
+          <span class="performance-panel__bignum" aria-hidden="true">01</span>
+          <span class="performance-panel__num">01</span>
+          <h3 class="performance-panel__title">Functional Training</h3>
+          <p class="performance-panel__text">
+            Build strength and mobility with tools for cross-training, recovery, and
+            injury-risk reduction.
+          </p>
+          <a href="#" class="performance-panel__btn">Explore More <span>&rarr;</span></a>
+        </div>
+
+        <div class="performance-panel__image reveal-right">
+          <img src="images/performance-training.jpg" alt="Athlete performing a dumbbell bicep curl" />
+        </div>
+      </div>
+
+      <div class="performance-spotlight__columns">
+        <div class="performance-panel reveal-left">
+          <span class="performance-panel__bignum" aria-hidden="true">02</span>
+          <span class="performance-panel__num">02</span>
+          <h3 class="performance-panel__title">Cardio Area</h3>
+          <p class="performance-panel__text">
+            A modern cardio area equipped with treadmills, stationary bikes, rowing
+            machines, and ellipticals. Designed to improve cardiovascular endurance,
+            support fat loss, and increase overall stamina in an energetic training
+            environment.
+          </p>
+          <a href="#" class="performance-panel__btn">Explore More <span>&rarr;</span></a>
+        </div>
+
+        <div class="performance-panel__image reveal-right">
+          <img src="images/Cardioimg.jpg" alt="Athlete running on a treadmill" />
+        </div>
+      </div>
+
+      <div class="performance-spotlight__columns">
+        <div class="performance-panel reveal-left">
+          <span class="performance-panel__bignum" aria-hidden="true">03</span>
+          <span class="performance-panel__num">03</span>
+          <h3 class="performance-panel__title">Fitness &amp; Pilates</h3>
+          <p class="performance-panel__text">
+            A fully equipped fitness and Pilates studio designed to improve flexibility,
+            core strength, posture, balance, and overall body conditioning through
+            guided movement and functional exercises.
+          </p>
+          <a href="#" class="performance-panel__btn">Explore More <span>&rarr;</span></a>
+        </div>
+
+        <div class="performance-panel__image reveal-right">
+          <img src="images/fitnessimg.jpg" alt="Woman performing a Pilates core exercise" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 2: Our Expert Coaches ===== -->
+  <section class="coaches" id="coaches">
+    <div class="container coaches-grid">
+      <article class="coach-card reveal">
+        <div class="coach-card__image">
+          <img src="images/Christiangrant.jpg" alt="Christian Grant" />
+          <div class="coach-card__overlay"></div>
+          <div class="coach-card__social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.66 15.4 3.58 14.25 3.58c-2.4 0-4.05 1.47-4.05 4.16V10H7.5v3.1h2.7V21h3.3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 3.5a1.75 1.75 0 100 3.5 1.75 1.75 0 000-3.5zM20 20h-2.87v-5.87c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.53-2.25 3.1V20H10.06V8.5h2.76v1.57h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V20z"/></svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7.1 9.1L4.3 20h1.9l6-6.5 4.6 6.5H20l-7.4-9.6L19 4h-1.9l-5.5 6-4.2-6H4z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="coach-card__name">Christian Grant</h3>
+        <p class="coach-card__role">Personal Trainer</p>
+      </article>
+
+      <div class="coaches-intro">
+        <div class="coaches-intro__content reveal">
+          <span class="section-label">Coaches Who Deliver Results</span>
+          <h2 class="coaches-intro__heading">Our Expert Coaches</h2>
+          <a href="#" class="coaches-intro__btn">Explore More <span>&rarr;</span></a>
+        </div>
+      </div>
+
+      <article class="coach-card reveal">
+        <div class="coach-card__image">
+          <img src="images/Sandralee.jpg" alt="Sandra Lee" />
+          <div class="coach-card__overlay"></div>
+          <div class="coach-card__social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.66 15.4 3.58 14.25 3.58c-2.4 0-4.05 1.47-4.05 4.16V10H7.5v3.1h2.7V21h3.3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 3.5a1.75 1.75 0 100 3.5 1.75 1.75 0 000-3.5zM20 20h-2.87v-5.87c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.53-2.25 3.1V20H10.06V8.5h2.76v1.57h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V20z"/></svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7.1 9.1L4.3 20h1.9l6-6.5 4.6 6.5H20l-7.4-9.6L19 4h-1.9l-5.5 6-4.2-6H4z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="coach-card__name">Sandra Lee</h3>
+        <p class="coach-card__role">Fitness Instructor</p>
+      </article>
+
+      <article class="coach-card reveal">
+        <div class="coach-card__image">
+          <img src="images/Marypeterson.jpg" alt="Mary Peterson" />
+          <div class="coach-card__overlay"></div>
+          <div class="coach-card__social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.66 15.4 3.58 14.25 3.58c-2.4 0-4.05 1.47-4.05 4.16V10H7.5v3.1h2.7V21h3.3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 3.5a1.75 1.75 0 100 3.5 1.75 1.75 0 000-3.5zM20 20h-2.87v-5.87c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.53-2.25 3.1V20H10.06V8.5h2.76v1.57h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V20z"/></svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7.1 9.1L4.3 20h1.9l6-6.5 4.6 6.5H20l-7.4-9.6L19 4h-1.9l-5.5 6-4.2-6H4z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="coach-card__name">Mary Peterson</h3>
+        <p class="coach-card__role">Group Class Trainer</p>
+      </article>
+
+      <div class="coaches-grid__empty" aria-hidden="true"></div>
+
+      <article class="coach-card reveal">
+        <div class="coach-card__image">
+          <img src="images/Robertgray.jpg" alt="Robert Gray" />
+          <div class="coach-card__overlay"></div>
+          <div class="coach-card__social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.66 15.4 3.58 14.25 3.58c-2.4 0-4.05 1.47-4.05 4.16V10H7.5v3.1h2.7V21h3.3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H4.06V20h2.88V8.5zM5.5 3.5a1.75 1.75 0 100 3.5 1.75 1.75 0 000-3.5zM20 20h-2.87v-5.87c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.53-2.25 3.1V20H10.06V8.5h2.76v1.57h.04c.38-.73 1.33-1.5 2.74-1.5 2.93 0 3.47 1.93 3.47 4.44V20z"/></svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7.1 9.1L4.3 20h1.9l6-6.5 4.6 6.5H20l-7.4-9.6L19 4h-1.9l-5.5 6-4.2-6H4z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h3 class="coach-card__name">Robert Gray</h3>
+        <p class="coach-card__role">Fitness Instructor</p>
+      </article>
+    </div>
+
+    <div class="container stats-row">
+      <div class="stat">
+        <span class="stat__number">150+</span>
+        <span class="stat__label">Happy Members</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">34</span>
+        <span class="stat__label">Expert Trainers</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">240</span>
+        <span class="stat__label">Classes Completed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 3: Gallery Strip ===== -->
+  <section class="gallery">
+    <div class="gallery__item">
+      <img src="images/gymequipment.jpg" alt="Gym Equipment" />
+      <span class="gallery__caption">Gym Equipment</span>
+    </div>
+    <div class="gallery__item">
+      <img src="images/grouptrainig.jpg" alt="Group Training" />
+      <span class="gallery__caption">Group Training</span>
+    </div>
+    <div class="gallery__item">
+      <img src="images/exercisemachine.jpg" alt="Exercise Machines" />
+      <span class="gallery__caption">Exercise Machines</span>
+    </div>
+  </section>
+
+  <!-- ===== Section 3b: Testimonials ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container testimonials__inner">
+      <div class="testimonials__images" id="testimonialImages">
+        <img
+          class="testimonial-image"
+          data-index="0"
+          src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1000&auto=format&fit=crop"
+          alt="Daniel Reyes"
+        />
+        <img
+          class="testimonial-image"
+          data-index="1"
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
+          alt="Priya Nair"
+        />
+        <img
+          class="testimonial-image"
+          data-index="2"
+          src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=1000&auto=format&fit=crop"
+          alt="Marcus Webb"
+        />
+      </div>
+
+      <div class="testimonials__content">
+        <span class="section-label">What Our Members Say</span>
+        <h3 class="testimonials__name" id="testimonialName">Daniel Reyes</h3>
+        <p class="testimonials__role" id="testimonialRole">Member Since 2023</p>
+        <p class="testimonials__quote" id="testimonialQuote"></p>
+
+        <div class="testimonials__arrows">
+          <button class="testimonials__arrow" id="testimonialPrev" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="testimonials__arrow" id="testimonialNext" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 4: Become a Member CTA ===== -->
+  <section class="membership" id="membership">
+    <div class="container membership__inner">
+      <h2 class="membership__heading">Become a Member</h2>
+      <p class="membership__subtext">
+        Join Fit World today and get full access to expert coaching, premium
+        equipment, and a community that keeps you motivated every step of the way.
+      </p>
+      <button class="btn btn--line" id="joinNowBtn">Join Now</button>
+    </div>
+  </section>
+
+  <!-- ===== Join Now / Get In Touch Modal ===== -->
+  <div class="modal" id="joinModal" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__box">
+      <button class="modal__close" id="modalClose" aria-label="Close form">&times;</button>
+
+      <div class="modal__form-wrap" id="modalFormWrap">
+        <span class="section-label">Join Fit World</span>
+        <h3 class="modal__title">Get In Touch</h3>
+        <p class="modal__subtitle">Fill in your details and our team will reach out to you.</p>
+
+        <form class="modal__form" id="joinForm">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your full name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>Phone Number</span>
+            <input type="tel" name="phone" placeholder="+1 (555) 123-4567" required />
+          </label>
+          <label>
+            <span>Type of Workout</span>
+            <select name="workout" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Functional Training</option>
+              <option>Cardio</option>
+              <option>Fitness &amp; Pilates</option>
+              <option>Strength Training</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>
+            <span>Additional Enquiry (optional)</span>
+            <textarea name="enquiry" rows="3" placeholder="Anything else we should know?"></textarea>
+          </label>
+          <button type="submit" class="btn btn--line modal__submit">Submit Enquiry</button>
+        </form>
+      </div>
+
+      <div class="modal__success" id="modalSuccess" hidden>
+        <h3 class="modal__title">Thank You!</h3>
+        <p class="modal__subtitle">Your enquiry has been received. Our team will reach out to you shortly.</p>
+        <button type="button" class="btn btn--line" id="modalSuccessClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <a href="#" class="logo">Fit <span>World</span></a>
+        <p>Train smarter, move better, and progress every day with Fit World.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Classes</a></li>
+          <li><a href="#coaches">Coaches</a></li>
+          <li><a href="#membership">Membership</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li>123 Fitness Ave, Iron City</li>
+          <li>+1 (555) 123-4567</li>
+          <li>hello@ironx.com</li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Stay Connected</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Twitter">TW</a>
+        </div>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Fit World Gym &amp; Fitness. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
