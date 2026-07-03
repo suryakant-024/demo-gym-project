@@ -276,7 +276,7 @@ if (chatWidget && chatToggle) {
     const message = document.createElement('div');
     message.className = 'chat-message chat-message--bot chat-message--typing';
     const bubble = document.createElement('p');
-    bubble.textContent = 'Typing...';
+    bubble.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
     message.appendChild(bubble);
     chatMessages.appendChild(message);
     chatMessages.scrollTop = chatMessages.scrollHeight;
