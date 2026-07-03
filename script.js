@@ -49,11 +49,40 @@ if (joinNowBtn && joinModal) {
     if (e.key === 'Escape' && joinModal.classList.contains('is-open')) closeModal();
   });
 
+  const GYM_CONTACT_FORM_WEBHOOK_URL = 'https://rastogiparo022.app.n8n.cloud/webhook/gym-contact-form';
+
   joinForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    modalFormWrap.hidden = true;
-    modalSuccess.hidden = false;
-    joinForm.reset();
+
+    const submitBtn = joinForm.querySelector('.modal__submit');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const formData = new FormData(joinForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    fetch(GYM_CONTACT_FORM_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Request failed');
+        return res.json();
+      })
+      .then(() => {
+        modalFormWrap.hidden = true;
+        modalSuccess.hidden = false;
+        joinForm.reset();
+      })
+      .catch(() => {
+        alert("Sorry, something went wrong sending your enquiry. Please try again or contact us directly.");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      });
   });
 }
 
@@ -198,4 +227,89 @@ if (testimonialImages.length && testimonialName && testimonialQuote) {
 
   renderTestimonial();
   startAutoplay();
+}
+
+// AI chat widget (UI shell only — wire the real reply up to your n8n/GPT
+// webhook inside sendMessage() where marked below)
+const chatWidget = document.getElementById('chatWidget');
+const chatToggle = document.getElementById('chatToggle');
+const chatClose = document.getElementById('chatClose');
+const chatWindow = document.getElementById('chatWindow');
+const chatMessages = document.getElementById('chatMessages');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const chatTeaser = document.getElementById('chatTeaser');
+const chatTeaserClose = document.getElementById('chatTeaserClose');
+
+if (chatWidget && chatToggle) {
+  function hideTeaser() {
+    if (chatTeaser) chatTeaser.classList.remove('is-visible');
+  }
+
+  function openChat() {
+    chatWidget.classList.add('is-open');
+    chatWindow.setAttribute('aria-hidden', 'false');
+    chatInput.focus();
+    hideTeaser();
+  }
+
+  function closeChat() {
+    chatWidget.classList.remove('is-open');
+    chatWindow.setAttribute('aria-hidden', 'true');
+  }
+
+  function appendMessage(text, sender) {
+    const message = document.createElement('div');
+    message.className = `chat-message chat-message--${sender}`;
+    const bubble = document.createElement('p');
+    bubble.textContent = text;
+    message.appendChild(bubble);
+    chatMessages.appendChild(message);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function sendMessage(text) {
+    appendMessage(text, 'user');
+
+    // TODO: replace this placeholder with a call to your n8n webhook /
+    // GPT API, e.g.:
+    //   fetch('https://your-n8n-instance/webhook/chat', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ message: text }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => appendMessage(data.reply, 'bot'));
+    setTimeout(() => {
+      appendMessage("Thanks for reaching out! This is a placeholder reply — connect me to your AI backend to go live.", 'bot');
+    }, 600);
+  }
+
+  chatToggle.addEventListener('click', () => {
+    chatWidget.classList.contains('is-open') ? closeChat() : openChat();
+  });
+
+  chatClose.addEventListener('click', closeChat);
+
+  chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = chatInput.value.trim();
+    if (!text) return;
+    sendMessage(text);
+    chatInput.value = '';
+  });
+
+  // Auto-show a teaser bubble above the toggle button shortly after page load
+  if (chatTeaser) {
+    setTimeout(() => {
+      if (!chatWidget.classList.contains('is-open')) {
+        chatTeaser.classList.add('is-visible');
+      }
+    }, 2000);
+
+    chatTeaserClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hideTeaser();
+    });
+  }
 }

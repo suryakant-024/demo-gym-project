@@ -409,6 +409,49 @@
     </div>
   </div>
 
+  <!-- ===== AI Chat Widget (UI only — wire up to n8n/GPT API later) ===== -->
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-widget__window" id="chatWindow" aria-hidden="true">
+      <div class="chat-widget__header">
+        <div class="chat-widget__header-info">
+          <img class="chat-widget__avatar" src="images/togglelogo.jpg" alt="Fit World" />
+          <div>
+            <p class="chat-widget__name">Fit World Assistant</p>
+            <p class="chat-widget__status">
+              <span class="chat-widget__status-dot"></span> Online
+            </p>
+          </div>
+        </div>
+        <button class="chat-widget__close" id="chatClose" aria-label="Close chat">&times;</button>
+      </div>
+
+      <div class="chat-widget__messages" id="chatMessages">
+        <div class="chat-message chat-message--bot">
+          <p>Hi there! I'm the Fit World assistant. Ask me about memberships, classes, or trainers — how can I help today?</p>
+        </div>
+      </div>
+
+      <form class="chat-widget__input-row" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Ask me anything..." autocomplete="off" required />
+        <button type="submit" class="chat-widget__send" aria-label="Send message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="chat-widget__teaser" id="chatTeaser">
+      <button class="chat-widget__teaser-close" id="chatTeaserClose" aria-label="Dismiss">&times;</button>
+      <p>Need help? Search for more enquiry — chat with us!</p>
+    </div>
+
+    <button class="chat-widget__toggle" id="chatToggle" aria-label="Open chat">
+      <img class="chat-widget__icon chat-widget__icon--chat" src="images/togglelogo.jpg" alt="Chat with us" />
+      <svg class="chat-widget__icon chat-widget__icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
   <!-- ===== Footer ===== -->
   <footer class="footer" id="contact">
     <div class="container footer__grid">
