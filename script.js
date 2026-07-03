@@ -258,6 +258,9 @@ if (chatWidget && chatToggle) {
     chatWindow.setAttribute('aria-hidden', 'true');
   }
 
+  const GYM_CHAT_ASSISTANT_WEBHOOK_URL = 'https://rastogiparo022.app.n8n.cloud/webhook/gym-chat-assistant';
+  const chatSessionId = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
   function appendMessage(text, sender) {
     const message = document.createElement('div');
     message.className = `chat-message chat-message--${sender}`;
@@ -266,23 +269,41 @@ if (chatWidget && chatToggle) {
     message.appendChild(bubble);
     chatMessages.appendChild(message);
     chatMessages.scrollTop = chatMessages.scrollHeight;
+    return message;
+  }
+
+  function showTypingIndicator() {
+    const message = document.createElement('div');
+    message.className = 'chat-message chat-message--bot chat-message--typing';
+    const bubble = document.createElement('p');
+    bubble.textContent = 'Typing...';
+    message.appendChild(bubble);
+    chatMessages.appendChild(message);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return message;
   }
 
   function sendMessage(text) {
     appendMessage(text, 'user');
+    const typingEl = showTypingIndicator();
 
-    // TODO: replace this placeholder with a call to your n8n webhook /
-    // GPT API, e.g.:
-    //   fetch('https://your-n8n-instance/webhook/chat', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ message: text }),
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => appendMessage(data.reply, 'bot'));
-    setTimeout(() => {
-      appendMessage("Thanks for reaching out! This is a placeholder reply — connect me to your AI backend to go live.", 'bot');
-    }, 600);
+    fetch(GYM_CHAT_ASSISTANT_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text, sessionId: chatSessionId }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Request failed');
+        return res.json();
+      })
+      .then((data) => {
+        typingEl.remove();
+        appendMessage(data.reply || "Sorry, I didn't catch that — could you rephrase?", 'bot');
+      })
+      .catch(() => {
+        typingEl.remove();
+        appendMessage("Sorry, I'm having trouble connecting right now — please try again or contact us directly.", 'bot');
+      });
   }
 
   chatToggle.addEventListener('click', () => {
